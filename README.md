@@ -46,6 +46,9 @@ DeepSeek 网页版没有一键导出按钮，用浏览器开发者工具获取�
 
 （也可以使用任意能导出 DeepSeek 网页会话为 ChatGPT 格式 `conversations.json` 的浏览器插件。）
 
+<img width="2908" height="1662" alt="image" src="https://github.com/user-attachments/assets/9c0fde06-693b-4608-84f7-406dce5249f9" />
+
+
 ## 使用 / Usage
 
 ```bash
@@ -67,6 +70,8 @@ dsh-web-import --list-workspaces
 # 指定 DSH 家目录 / 服务端口
 dsh-web-import conversations.json --home ~/.dsh --port 3080
 ```
+<img width="2076" height="1086" alt="image" src="https://github.com/user-attachments/assets/b2ee31a2-cfbe-421e-bfa1-a20e9434e693" />
+
 
 ### 重要：先停止 dsh web / Important: stop dsh web first
 
