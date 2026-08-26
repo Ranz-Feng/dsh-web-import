@@ -1,0 +1,46 @@
+{
+  "name": "dsh-web-import",
+  "version": "0.1.0",
+  "description": "Import DeepSeek Web (chat.deepseek.com) chat history into DeepSeek Harness as resumable, workspace-grouped sessions with original titles. 把 DeepSeek 网页版聊天记录导入 DeepSeek Harness，自动分组并保留原标题。",
+  "type": "module",
+  "bin": {
+    "dsh-web-import": "bin/dsh-web-import.js"
+  },
+  "main": "src/cli.js",
+  "exports": {
+    ".": "./src/cli.js",
+    "./convert": "./src/convert.js",
+    "./dsh": "./src/dsh.js",
+    "./domains": "./src/domains.js"
+  },
+  "files": [
+    "bin",
+    "src",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=22.10.0"
+  },
+  "scripts": {
+    "test": "node --test"
+  },
+  "keywords": [
+    "deepseek",
+    "deepseek-harness",
+    "dsh",
+    "chat",
+    "import",
+    "conversation",
+    "workspace"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/<your-name>/dsh-web-import.git"
+  },
+  "bugs": {
+    "url": "https://github.com/<your-name>/dsh-web-import/issues"
+  },
+  "homepage": "https://github.com/<your-name>/dsh-web-import#readme"
+}
