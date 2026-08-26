@@ -37,10 +37,10 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/<your-name>/dsh-web-import.git"
+    "url": "https://github.com/Ranz-Feng/dsh-web-import.git"
   },
   "bugs": {
-    "url": "https://github.com/<your-name>/dsh-web-import/issues"
+    "url": "https://github.com/Ranz-Feng/dsh-web-import/issues"
   },
-  "homepage": "https://github.com/<your-name>/dsh-web-import#readme"
+  "homepage": "https://github.com/Ranz-Feng/dsh-web-import#readme"
 }
