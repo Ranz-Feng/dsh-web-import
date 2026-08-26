@@ -55,6 +55,7 @@ const HELP = `dsh-web-import — 把 DeepSeek 网页版聊天记录导入 DeepSe
   --dry-run                   只解析与统计，不写入任何文件
   --yes                       非交互模式：跳过所有提示（需配合
                               --workspace 或 --new-workspace 使用）
+  -v, --version               显示版本号
   -h, --help                  显示帮助
 
 示例：
@@ -68,7 +69,7 @@ const HELP = `dsh-web-import — 把 DeepSeek 网页版聊天记录导入 DeepSe
 // ---------------------------------------------------------------------------
 
 function parseArgs(argv) {
-  const args = { positionals: [], workspace: undefined, newWorkspace: undefined, workspaceDir: undefined, home: undefined, port: DEFAULT_PORT, importOnly: false, dryRun: false, yes: false, listWorkspaces: false, help: false };
+  const args = { positionals: [], workspace: undefined, newWorkspace: undefined, workspaceDir: undefined, home: undefined, port: DEFAULT_PORT, importOnly: false, dryRun: false, yes: false, listWorkspaces: false, help: false, version: false };
   for (let i = 0; i < argv.length; i++) {
     const a = argv[i];
     switch (a) {
@@ -81,6 +82,8 @@ function parseArgs(argv) {
       case "--dry-run": args.dryRun = true; break;
       case "--yes": args.yes = true; break;
       case "--list-workspaces": args.listWorkspaces = true; break;
+      case "-v":
+      case "--version": args.version = true; break;
       case "-h":
       case "--help": args.help = true; break;
       default:
@@ -89,6 +92,16 @@ function parseArgs(argv) {
     }
   }
   return args;
+}
+
+/** 读取 package.json 的版本号 */
+function readVersion() {
+  try {
+    const pkg = JSON.parse(fs.readFileSync(new URL("../package.json", import.meta.url), "utf8"));
+    return typeof pkg.version === "string" ? pkg.version : "0.0.0";
+  } catch {
+    return "0.0.0";
+  }
 }
 
 function dshHomeOf(args) {
@@ -205,6 +218,11 @@ export async function runCli() {
   }
 
   const dshHome = dshHomeOf(args);
+
+  if (args.version) {
+    console.log(readVersion());
+    return;
+  }
 
   if (args.listWorkspaces) {
     const workspaces = listWorkspaces(dshHome);

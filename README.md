@@ -1,5 +1,10 @@
 # dsh-web-import
 
+[![npm version](https://img.shields.io/npm/v/dsh-web-import.svg)](https://www.npmjs.com/package/dsh-web-import)
+[![License](https://img.shields.io/npm/l/dsh-web-import.svg)](LICENSE)
+[![Node](https://img.shields.io/badge/node-%3E%3D22.10-blue.svg)](package.json)
+[![GitHub stars](https://img.shields.io/github/stars/Ranz-Feng/dsh-web-import?style=social)](https://github.com/Ranz-Feng/dsh-web-import)
+
 把 DeepSeek 网页版（chat.deepseek.com）的聊天记录导入 **DeepSeek Harness**，成为可继续对话的会话——自动保留网页版原标题、自动挂到所选工作区分组。
 
 Import DeepSeek Web (chat.deepseek.com) chat history into **DeepSeek Harness** as resumable sessions — original titles preserved, automatically grouped into the workspace you choose.
@@ -118,9 +123,10 @@ dsh web
 ## 开发 / Development
 
 ```bash
-git clone <repo-url>
+git clone https://github.com/Ranz-Feng/dsh-web-import.git
 cd dsh-web-import
 npm link          # 本地链接 dsh-web-import 命令
+npm test          # 运行单元测试（node --test）
 
 # 用示例文件在临时家目录试跑（不碰真实数据）
 node bin/dsh-web-import.js examples/sample-conversations.json --home /tmp/dsh-test --dry-run
