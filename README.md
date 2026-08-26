@@ -88,6 +88,8 @@ dsh web
 
 服务正在运行但只想导入会话文件时，可用 `--import-only`（之后停止服务重跑一次即可补全工作区挂载与缓存）。
 
+<img width="2908" height="1680" alt="image" src="https://github.com/user-attachments/assets/1c549666-b00d-463d-a2a9-c7a9c8397b14" />
+
 ## 命令参数 / Options
 
 | 参数 | 说明 |
